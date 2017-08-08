@@ -13,7 +13,12 @@ const directive = {
         `${snakeCase(p1)}${unit || ''}${mqModifier ? '_' + mqModifier : ''}`)
     })
     const className = cxs({
-      ...classes.reduce((sum, tClass) => ({ ...sum, ...t[tClass] }), {}),
+      ...classes.reduce((sum, tClass) => {
+        return {
+          ...sum,
+          ...(t[tClass] || {}),
+        }
+      }, {}),
     })
     className.split(' ').map(c => addClass(this.el, c))
   },
