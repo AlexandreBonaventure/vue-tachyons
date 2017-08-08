@@ -6,6 +6,7 @@
     <title>Example</title>
     <script type="text/javascript" src="https://unpkg.com/vue@1.x.x/dist/vue.min.js"></script>
     <script type="text/javascript" src="../dist/vue-tachyons.js"></script>
+    <link type="text/css" rel="stylesheet" href="../dist/src/index.css"></link>
   </head>
   <body>
     <div id="app">
@@ -15,7 +16,10 @@
         el: '#app',
         template: `
         <div>
-          <button type="button" v-tachyons.literal=".bg-red.blue">test</button>
+          <pre>
+            classes: .bg-red.blue.f5.pa3.ma2
+          </pre>
+          <button type="button" v-tachyons.literal=".bg-red.blue.f5.pa3.ma2">test</button>
         </div>
         `,
       })

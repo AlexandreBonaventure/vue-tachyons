@@ -7,8 +7,11 @@ import { addClass } from './utils/index.js'
 
 const directive = {
   update (newValue, oldValue) {
-    // console.log('class', newValue.split('.'))
-    const classes = compact(newValue.split('.')).map(c => snakeCase(c))
+    const classes = compact(newValue.split('.')).map(c => {
+      const pattern = /^([a-z]{1,}-*[a-z]*)([0-9])?(-[a-z]{1,2})?$/gi
+      return c.replace(pattern, (match, p1, unit, mqModifier, offset, string) =>
+        `${snakeCase(p1)}${unit || ''}${mqModifier ? '_' + mqModifier : ''}`)
+    })
     const className = cxs({
       ...classes.reduce((sum, tClass) => ({ ...sum, ...t[tClass] }), {}),
     })
