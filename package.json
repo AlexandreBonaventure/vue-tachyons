@@ -26,7 +26,8 @@
     "test": "echo \"no test specified\" && exit 0",
     "dist": "vue build src/index.js -c .vue/config.js --prod --lib",
     "version": "npm run dist",
-    "release": "np --no-publish && npm publish"
+    "release": "np --no-publish && npm publish",
+    "cancel-release": "git reset --hard HEAD^1 && git tag -d v0.0.5"
   },
   "repository": {
     "type": "git",
