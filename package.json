@@ -1,6 +1,6 @@
 {
   "name": "vue-tachyons",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tachyons styles directives for vue 1.x",
   "main": "dist/vue-tachyons.js",
   "directories": {
