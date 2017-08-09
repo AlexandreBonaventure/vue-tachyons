@@ -29,6 +29,6 @@ yarn install vue-tachyons
 to import tachyon default variables
 
 ## Thanks to
-[https://github.com/tachyons-css/tachyons](https://github.com/tachyons-css/tachyons)
-@jongold for coding [tachyons-js](https://github.com/jongold/tachyons-js)
-@jxnblk for coding [cxs](https://github.com/jxnblk/cxs)
+  - [https://github.com/tachyons-css/tachyons](https://github.com/tachyons-css/tachyons)
+  - @jongold for coding [tachyons-js](https://github.com/jongold/tachyons-js)
+  - @jxnblk for coding [cxs](https://github.com/jxnblk/cxs)
