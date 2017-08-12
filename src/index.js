@@ -1,5 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import v1 from './v1.js'
+import 'tachyons-js/variables.css'
+
 const versions = {
   v1,
 }

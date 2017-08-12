@@ -12,7 +12,11 @@
     "tachyons-js": "^0.3.1"
   },
   "devDependencies": {
+    "ava": "^0.21.0",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^2.0.7",
@@ -23,11 +27,15 @@
     "np": "^2.16.0"
   },
   "scripts": {
-    "test": "echo \"no test specified\" && exit 0",
+    "test": "ava test/*.js",
     "dist": "vue build src/index.js -c .vue/config.js --prod --lib",
     "version": "npm run dist",
     "release": "np --no-publish && npm publish",
     "cancel-release": "git reset --hard HEAD^1 && git tag -d v0.0.5"
+  },
+  "ava": {
+    "require": "./.test-setup.js",
+    "babel": "inherit"
   },
   "repository": {
     "type": "git",
