@@ -1,4 +1,10 @@
 
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/vue-tachyons"><img src="https://img.shields.io/npm/dm/vue-tachyons.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/vue-tachyons"><img src="https://img.shields.io/npm/v/vue-tachyons.svg" alt="Version"></a>
+</p>
+
 # Vue tachyons
 Small wrapper to use tachyons as css-in-js solutions for Vue components
 
