@@ -15,14 +15,32 @@
     <script type="text/javascript">
       const app = new Vue({
         el: '#app',
+        data: {
+          tachyons1: '.o-50.bg-dark-gray.blue.f5.pa3.ma2',
+          tachyons2: '.bg-red.blue.f5.pa3.ma2',
+          index: 1,
+        },
+        computed: {
+          computedClass () {
+            return this[`tachyons${this.index}`]
+          },
+        },
+        created () {
+          setInterval(() => { this.index = this.index === 1 ? 2 : 1 }, 2000)
+        },
         template: `
-        <div>
-          <pre>
-            classes: .bg-red.blue.f5.pa3.ma2
-            classes: .o-50.bg-dark-gray.blue.f5.pa3.ma2
-          </pre>
-          <button type="button" v-tachyons.literal=".bg-red.blue.f5.pa3.ma2">test</button>
-          <button type="button" v-tachyons.literal=".o-50.bg-dark-gray.blue.f5.pa3.ma2">test</button>
+        <div v-tachyons.literal=".pa5">
+          <h1 v-tachyons.literal=".f2.helvetica.mb2">
+            Example
+          </h1>
+          <div v-tachyons.literal=".flex">
+            <div>
+              <button type="button" v-tachyons="computedClass">test</button>
+            </div>
+            <pre>
+              {{ computedClass }}
+            </pre>
+          </div>
         </div>
         `,
       })
